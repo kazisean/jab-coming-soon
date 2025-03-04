@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/iiNotes-org/coming-soon-base/main/icon.png">
+    <title>JAB: The Browser That Doesnt Byte.</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .iinotes-container {
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .iinotes-logo {
+            font-size: 100px;
+            color: #6290C8;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: inline-block;
+            position: relative;
+            z-index: 2;
+            margin-bottom: 10px;
+            white-space: nowrap; /* Prevent wrapping unless it can't fit */
+        }
+
+        .asterisk {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .iinotes-text {
+            font-size: 16px;
+            color: #333;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            margin-top: 10px;
+            width: 100%;
+            overflow: visible;
+            word-wrap: break-word; /* Ensure text wraps correctly */
+        }
+
+        .iinotes-container:hover .iinotes-logo {
+            transform: translateY(-10px);
+        }
+
+        .iinotes-container:hover .asterisk {
+            opacity: 1;
+        }
+
+        .iinotes-container:hover .iinotes-text {
+            opacity: 1;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 1200px) {
+            .iinotes-logo {
+                font-size: 40px;
+            }
+
+            .iinotes-text {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .iinotes-container {
+                max-width: 400px;
+            }
+
+            .iinotes-logo {
+                font-size: 32px;
+            }
+
+            .iinotes-text {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .iinotes-container {
+                max-width: 300px;
+            }
+
+            .iinotes-logo {
+                font-size: 24px;
+            }
+
+            .iinotes-text {
+                font-size: 11px;
+            }
+
+            .iinotes-container:hover .iinotes-logo {
+                transform: translateY(-5px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="iinotes-container">
+        <div class="iinotes-logo">Just a Browser<span class="asterisk">*</span></div>
+        <div class="iinotes-text">
+            But Built to End Surveillance. Zero ads, zero trackers, lightning-fast.
+        </div>
+    </div>
+</body>
+
+</html>
