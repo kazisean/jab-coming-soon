@@ -30,7 +30,24 @@
             position: relative;
             z-index: 2;
             margin-bottom: 10px;
-            white-space: nowrap; /* Prevent wrapping unless it can't fit */
+            white-space: nowrap;
+        }
+        
+        .logo-short {
+            display: inline-block;
+        }
+        
+        .logo-full {
+            display: none;
+            font-size: 0.6em; /* Adjust size for the longer text */
+        }
+        
+        .iinotes-container:hover .logo-short {
+            display: none;
+        }
+        
+        .iinotes-container:hover .logo-full {
+            display: inline-block;
         }
 
         .asterisk {
@@ -46,7 +63,7 @@
             margin-top: 10px;
             width: 100%;
             overflow: visible;
-            word-wrap: break-word; /* Ensure text wraps correctly */
+            word-wrap: break-word;
         }
 
         .iinotes-container:hover .iinotes-logo {
@@ -108,7 +125,10 @@
 
 <body>
     <div class="iinotes-container">
-        <div class="iinotes-logo">Just a Browser<span class="asterisk">*</span></div>
+        <div class="iinotes-logo">
+            <span class="logo-short">JAB</span>
+            <span class="logo-full">Just a Browser<span class="asterisk">*</span></span>
+        </div>
         <div class="iinotes-text">
             But Built to End Surveillance. Zero ads, zero trackers, lightning-fast.
         </div>
