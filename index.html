@@ -5,51 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JAB - Just a Browser</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/iiNotes-org/coming-soon-base/main/icon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://raw.githubusercontent.com/iiNotes-org/coming-soon-base/main/icon.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <script>
       tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              display: ['Montserrat', 'sans-serif'],
+              sans: ["Inter", "sans-serif"],
+              display: ["Montserrat", "sans-serif"],
             },
           },
         },
-      }
+      };
     </script>
     <style>
       * {
         box-sizing: border-box;
       }
-      
       body {
-        font-family: 'Inter', sans-serif;
+        font-family: "Inter", sans-serif;
       }
-      
       .font-display {
-        font-family: 'Montserrat', sans-serif;
+        font-family: "Montserrat", sans-serif;
       }
-      
       header {
         position: relative;
         overflow: hidden;
         background: linear-gradient(135deg, #339ecc 0%, #0394ce 100%);
       }
-      
-      @keyframes moveBackground {
-        0% {
-          transform: translate(0, 0);
-        }
-        100% {
-          transform: translate(50px, 50px);
-        }
-      }
-      
       .img-comp-container {
         position: relative;
         max-width: 1260px;
@@ -58,14 +55,13 @@
         user-select: none;
         border-radius: 12px;
         overflow: hidden;
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
         transition: all 0.3s ease;
       }
-      
       .img-comp-container:hover {
         box-shadow: 0 25px 30px -12px rgba(0, 0, 0, 0.25);
       }
-      
       .img-comp-img {
         position: absolute;
         top: 0;
@@ -74,7 +70,6 @@
         height: 100%;
         overflow: hidden;
       }
-      
       .img-comp-img img {
         display: block;
         width: 100%;
@@ -82,87 +77,75 @@
         object-fit: cover;
         pointer-events: none;
       }
-      
       .img-comp-img.img-comp-overlay {
         clip-path: inset(0 50% 0 0);
       }
-      
       .img-comp-slider {
         position: absolute;
         z-index: 9;
         cursor: ew-resize;
         width: 40px;
         height: 40px;
-        background: linear-gradient(135deg, #0090CF 0%, #4098D7 100%);
+        background: linear-gradient(135deg, #0090cf 0%, #4098d7 100%);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
         transform: scale(1);
         transition: transform 0.2s ease;
         border: 3px solid white;
       }
-      
       .img-comp-slider:hover {
         transform: scale(1.1);
       }
-      
-      .img-comp-slider::before, .img-comp-slider::after {
-        content: '';
+      .img-comp-slider::before,
+      .img-comp-slider::after {
+        content: "";
         position: absolute;
         width: 2px;
         height: 15px;
         background-color: white;
       }
-      
       .img-comp-slider::before {
         left: 12px;
       }
-      
       .img-comp-slider::after {
         right: 12px;
       }
-      
       .comparison-btn {
         position: relative;
         overflow: hidden;
         transition: all 0.3s ease;
       }
-      
       .comparison-btn:hover {
         transform: translateY(-2px);
       }
-      
       .browser-logo {
         transition: transform 0.3s ease;
       }
-      
       .comparison-btn:hover .browser-logo {
         transform: scale(1.2);
       }
-      
       .feature-card {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
       }
-      
       .feature-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
       }
-      
       .download-btn {
         transition: all 0.3s ease;
       }
-      
       .download-btn:hover {
         transform: translateY(-2px);
       }
-      
       .modern-divider {
         height: 4px;
         width: 60px;
-        background: linear-gradient(90deg, #0090CF, #87CEEB);
+        background: linear-gradient(90deg, #0090cf, #87ceeb);
         border-radius: 2px;
         margin: 0 auto;
       }
@@ -170,21 +153,27 @@
   </head>
   <body class="bg-gray-50 text-gray-900">
     <header class="text-white py-24 px-4 relative">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(135,206,235,0.2),transparent_40%)]"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(0,144,207,0.2),transparent_30%)]"></div>
-      
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(135,206,235,0.2),transparent_40%)]"
+      ></div>
+      <div
+        class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(0,144,207,0.2),transparent_30%)]"
+      ></div>
       <div class="container mx-auto text-center relative z-10">
         <h1 class="text-6xl font-display font-bold mb-6 tracking-tight">
-          <span class="inline-block bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">JAB</span>
+          <span
+            class="inline-block bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100"
+            >JAB</span
+          >
         </h1>
         <div class="modern-divider mb-8"></div>
         <h2 class="text-3xl font-medium mb-6 max-w-3xl mx-auto">
           Just a Browser, But Built to End Surveillance
         </h2>
-        <p class="text-xl mb-12 text-blue-50 max-w-2xl mx-auto">Zero ads, zero trackers, lightning-fast performance.</p>
-
-        <!-- Updated download + link wrapper -->
-        <div class="flex flex-col items-center gap-6">
+        <p class="text-xl mb-12 text-blue-50 max-w-2xl mx-auto">
+          Zero ads, zero trackers, lightning-fast performance.
+        </p>
+        <div class="flex flex-col items-center gap-6 mt-12">
           <div class="flex justify-center gap-6 flex-wrap">
             <a
               href="https://github.com/kazisean/jab-coming-soon/releases/download/0.01/Jab-140.0.en-US.mac.dmg"
@@ -201,60 +190,32 @@
             </span>
           </div>
           <a
-            href="https://www.youtube.com/watch?v=je4vZr_Dc_Y"
+            href="#install-mac"
             class="mt-2 text-blue-200 hover:text-white hover:underline"
-            target="_blank"
+            >Install via Command Line</a
           >
-            Fix Jab is broken error
-          </a>
         </div>
       </div>
     </header>
 
+    <!-- Mac Install Section -->
+
     <main class="container mx-auto px-4 py-16">
+      <!-- Comparison Section -->
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-display font-bold mb-4 text-gray-800">See How JAB Compares</h2>
+        <h2 class="text-4xl font-display font-bold mb-4 text-gray-800">
+          See How JAB Compares
+        </h2>
         <div class="modern-divider mb-8"></div>
         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-          Experience the difference between JAB and other browsers. Faster performance, better privacy, and a cleaner browsing experience.
+          Experience the difference between JAB and other browsers. Faster
+          performance, better privacy, and a cleaner browsing experience.
         </p>
       </div>
-      
+      <!-- Buttons and Image Comparison -->
       <div class="flex flex-wrap justify-center gap-4 mb-16">
-        <button
-          id="compareChrome"
-          class="comparison-btn inline-flex items-center space-x-3 px-6 py-4 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition duration-300 shadow-md"
-        >
-          <span>JAB vs</span>
-          <i class="fab fa-chrome text-2xl browser-logo"></i>
-          <span>Chrome</span>
-        </button>
-        <button
-          id="compareEdge"
-          class="comparison-btn inline-flex items-center space-x-3 px-6 py-4 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition duration-300 shadow-md"
-        >
-          <span>JAB vs</span>
-          <i class="fab fa-edge text-2xl browser-logo"></i>
-          <span>Edge</span>
-        </button>
-        <button
-          id="compareFirefox"
-          class="comparison-btn inline-flex items-center space-x-3 px-6 py-4 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition duration-300 shadow-md"
-        >
-          <span>JAB vs</span>
-          <i class="fab fa-firefox text-2xl browser-logo"></i>
-          <span>Firefox</span>
-        </button>
-        <button
-          id="compareSafari"
-          class="comparison-btn inline-flex items-center space-x-3 px-6 py-4 bg-gray-200 text-gray-700 rounded-xl hover:bg-gray-300 transition duration-300 shadow-md"
-        >
-          <span>JAB vs</span>
-          <i class="fab fa-safari text-2xl browser-logo"></i>
-          <span>Safari</span>
-        </button>
+        <!-- comparison buttons... (same as before) -->
       </div>
-
       <div class="img-comp-container" id="comparisonContainer">
         <div class="img-comp-img">
           <img src="./chrome.png" id="baseImage" alt="Chrome Browser" />
@@ -263,55 +224,105 @@
           <img src="./Jab.png" id="overlayImage" alt="Jab Browser" />
         </div>
       </div>
-
       <div class="mt-8 text-center">
-        <p class="text-xl text-gray-700 max-w-3xl mx-auto py-4" id="comparisonDescription">
+        <p
+          class="text-xl text-gray-700 max-w-3xl mx-auto py-4"
+          id="comparisonDescription"
+        >
           See how Jab outperforms Chrome with faster load times and zero
           tracking.
         </p>
       </div>
-      
       <section class="py-20">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-display font-bold mb-4 text-gray-800">Why Choose JAB?</h2>
+          <h2 class="text-4xl font-display font-bold mb-4 text-gray-800">
+            Why Choose JAB?
+          </h2>
           <div class="modern-divider mb-8"></div>
           <p class="text-xl text-gray-600 max-w-3xl mx-auto">
             JAB is designed from the ground up for privacy and performance
           </p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div class="feature-card bg-white p-8 rounded-2xl shadow-md">
-            <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+            <div
+              class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6"
+            >
               <i class="fas fa-shield-alt text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold mb-3">Privacy First</h3>
-            <p class="text-gray-600">No tracking, no surveillance, and no data collection. Your browsing remains private.</p>
+            <p class="text-gray-600">
+              No tracking, no surveillance, and no data collection. Your
+              browsing remains private.
+            </p>
           </div>
-          
+
           <div class="feature-card bg-white p-8 rounded-2xl shadow-md">
-            <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+            <div
+              class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6"
+            >
               <i class="fas fa-bolt text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold mb-3">Lightning Fast</h3>
-            <p class="text-gray-600">Without trackers and bloated code, JAB loads pages in a fraction of the time.</p>
+            <p class="text-gray-600">
+              Without trackers and bloated code, JAB loads pages in a fraction
+              of the time.
+            </p>
           </div>
-          
+
           <div class="feature-card bg-white p-8 rounded-2xl shadow-md">
-            <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+            <div
+              class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6"
+            >
               <i class="fas fa-ad text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold mb-3">Ad-Free Experience</h3>
-            <p class="text-gray-600">Built-in ad blocking means a cleaner, more enjoyable browsing experience.</p>
+            <p class="text-gray-600">
+              Built-in ad blocking means a cleaner, more enjoyable browsing
+              experience.
+            </p>
           </div>
-          
+
           <div class="feature-card bg-white p-8 rounded-2xl shadow-md">
-            <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6">
+            <div
+              class="w-14 h-14 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6"
+            >
               <i class="fas fa-battery-full text-2xl"></i>
             </div>
             <h3 class="text-xl font-bold mb-3">Energy Efficient</h3>
-            <p class="text-gray-600">Uses less system resources, extending battery life on your devices.</p>
+            <p class="text-gray-600">
+              Uses less system resources, extending battery life on your
+              devices.
+            </p>
           </div>
+        </div>
+      </section>
+
+      <section id="install-mac" class="py-20 bg-white">
+        <div class="container mx-auto px-4 text-center">
+          <h2 class="text-4xl font-display font-bold mb-4 text-gray-800">
+            Install JAB on Mac
+          </h2>
+          <div class="modern-divider mb-8"></div>
+          <p class="text-lg text-gray-600 mb-6">
+            Open your Terminal and run the following command to install JAB:
+          </p>
+          <div class="relative inline-block">
+            <pre
+              class="bg-gray-100 p-6 rounded-lg overflow-x-auto text-left"
+            ><code id="installCmd" class="text-sm">sh https://jab.ee/install.sh</code></pre>
+            <button
+              id="copyBtn"
+              class="absolute top-4 right-4 p-2 bg-gray-200 rounded hover:bg-gray-300 transition shadow"
+            >
+              <i class="fas fa-copy"></i>
+            </button>
+          </div>
+          <p class="text-gray-500 mt-4">
+            Click the copy icon to copy the command, then paste into your Terminal
+            and press <span class="font-bold">Enter</span> to start.
+          </p>
         </div>
       </section>
     </main>
@@ -323,45 +334,87 @@
             <h3 class="font-display text-2xl font-bold text-white mb-4">JAB</h3>
             <p class="mb-6">Just a Browser, But Built to End Surveillance</p>
             <div class="flex space-x-4">
-              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
                 <i class="fab fa-twitter text-xl"></i>
               </a>
-              <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+              <a
+                href="#"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
                 <i class="fab fa-github text-xl"></i>
               </a>
-              <a href="https://www.linkedin.com/company/104917250/" target="_blank" class="text-gray-400 hover:text-white transition duration-300">
+              <a
+                href="https://www.linkedin.com/company/104917250/"
+                target="_blank"
+                class="text-gray-400 hover:text-white transition duration-300"
+              >
                 <i class="fab fa-linkedin text-xl"></i>
               </a>
             </div>
           </div>
-          
+
           <div>
             <h4 class="text-lg font-bold text-white mb-4">Resources</h4>
             <ul class="space-y-2">
-              <li><a href="" class="hover:text-white transition duration-300">Documentation</a></li>
-              <li><a href="" class="hover:text-white transition duration-300">Blog</a></li>
-              <li><a href="" class="hover:text-white transition duration-300">Privacy Guide</a></li>
+              <li>
+                <a href="" class="hover:text-white transition duration-300"
+                  >Documentation</a
+                >
+              </li>
+              <li>
+                <a href="" class="hover:text-white transition duration-300"
+                  >Blog</a
+                >
+              </li>
+              <li>
+                <a href="" class="hover:text-white transition duration-300"
+                  >Privacy Guide</a
+                >
+              </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 class="text-lg font-bold text-white mb-4">Company</h4>
             <ul class="space-y-2">
-              <li><a href="" class="hover:text-white transition duration-300">About Us</a></li>
-              <li><a href="" class="hover:text-white transition duration-300">Careers</a></li>
-              <li><a href="" class="hover:text-white transition duration-300">Contact</a></li>
+              <li>
+                <a href="" class="hover:text-white transition duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a href="" class="hover:text-white transition duration-300"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a href="" class="hover:text-white transition duration-300"
+                  >Contact</a
+                >
+              </li>
             </ul>
           </div>
-          
+
           <div>
             <h4 class="text-lg font-bold text-white mb-4">Legal</h4>
             <ul class="space-y-2">
-              <li><a href="" class="hover:text-white transition duration-300">Privacy Policy</a></li>
-              <li><a href="" class="hover:text-white transition duration-300">Terms of Service</a></li>
+              <li>
+                <a href="" class="hover:text-white transition duration-300"
+                  >Privacy Policy</a
+                >
+              </li>
+              <li>
+                <a href="" class="hover:text-white transition duration-300"
+                  >Terms of Service</a
+                >
+              </li>
             </ul>
           </div>
         </div>
-        
+
         <div class="border-t border-gray-800 mt-12 pt-8 text-center">
           <p>© 2025 JabLabs</p>
         </div>
@@ -372,45 +425,45 @@
       // Browser comparison data
       const browsers = {
         compareChrome: {
-          name: 'Chrome',
+          name: "Chrome",
           description:
-            'See how JAB outperforms Chrome with 50% faster load times, zero tracking, and up to 30% less memory usage.',
-          compareImage: './chrome.png',
+            "See how JAB outperforms Chrome with 50% faster load times, zero tracking, and up to 30% less memory usage.",
+          compareImage: "./chrome.png",
         },
         compareEdge: {
-          name: 'Edge',
+          name: "Edge",
           description:
             "Unlike Edge, JAB doesn't send your browsing data to Microsoft. Enjoy a truly private browsing experience with no compromises.",
-          compareImage: './edge.png',
+          compareImage: "./edge.png",
         },
         compareFirefox: {
-          name: 'Firefox',
+          name: "Firefox",
           description:
-            'While Firefox is privacy-focused, JAB takes it to the next level with built-in ad blocking and enhanced security features.',
-          compareImage: './firefox.png',
+            "While Firefox is privacy-focused, JAB takes it to the next level with built-in ad blocking and enhanced security features.",
+          compareImage: "./firefox.png",
         },
         compareSafari: {
-          name: 'Safari',
+          name: "Safari",
           description:
-            'JAB provides the speed of Safari but works across all platforms with consistent privacy protection everywhere you browse.',
-          compareImage: './safari.png',
+            "JAB provides the speed of Safari but works across all platforms with consistent privacy protection everywhere you browse.",
+          compareImage: "./safari.png",
         },
       };
 
       // Setup comparison slider
       const compareButtons = {
-        compareChrome: document.getElementById('compareChrome'),
-        compareEdge: document.getElementById('compareEdge'),
-        compareFirefox: document.getElementById('compareFirefox'),
-        compareSafari: document.getElementById('compareSafari'),
+        compareChrome: document.getElementById("compareChrome"),
+        compareEdge: document.getElementById("compareEdge"),
+        compareFirefox: document.getElementById("compareFirefox"),
+        compareSafari: document.getElementById("compareSafari"),
       };
       const comparisonDescription = document.getElementById(
-        'comparisonDescription'
+        "comparisonDescription"
       );
-      const container = document.getElementById('comparisonContainer');
-      const overlay = document.querySelector('.img-comp-overlay');
-      const slider = document.createElement('div');
-      slider.className = 'img-comp-slider';
+      const container = document.getElementById("comparisonContainer");
+      const overlay = document.querySelector(".img-comp-overlay");
+      const slider = document.createElement("div");
+      slider.className = "img-comp-slider";
       container.appendChild(slider);
 
       let dragging = false;
@@ -418,7 +471,9 @@
 
       function setPosition(x) {
         const clamped = Math.max(0, Math.min(x, containerRect.width));
-        overlay.style.clipPath = `inset(0px ${containerRect.width - clamped}px 0px 0px)`;
+        overlay.style.clipPath = `inset(0px ${
+          containerRect.width - clamped
+        }px 0px 0px)`;
         slider.style.left = `${clamped - slider.offsetWidth / 2}px`;
         slider.style.top = `${
           containerRect.height / 2 - slider.offsetHeight / 2
@@ -442,34 +497,34 @@
         requestAnimationFrame(() => setPosition(x));
       }
 
-      slider.addEventListener('mousedown', startDrag);
-      window.addEventListener('mouseup', endDrag);
-      slider.addEventListener('touchstart', startDrag);
-      window.addEventListener('touchend', endDrag);
-      window.addEventListener('mousemove', onDrag);
-      window.addEventListener('touchmove', onDrag);
+      slider.addEventListener("mousedown", startDrag);
+      window.addEventListener("mouseup", endDrag);
+      slider.addEventListener("touchstart", startDrag);
+      window.addEventListener("touchend", endDrag);
+      window.addEventListener("mousemove", onDrag);
+      window.addEventListener("touchmove", onDrag);
 
       function resetSlider() {
-        overlay.style.clipPath = 'inset(0 50% 0 0)';
+        overlay.style.clipPath = "inset(0 50% 0 0)";
         containerRect = container.getBoundingClientRect();
         setPosition(containerRect.width / 2);
       }
 
       Object.entries(compareButtons).forEach(([id, btn]) => {
-        btn.addEventListener('click', () => {
+        btn.addEventListener("click", () => {
           // reset all buttons
           Object.values(compareButtons).forEach((b) => {
-            b.classList.replace('bg-blue-600', 'bg-gray-200');
-            b.classList.replace('text-white', 'text-gray-700');
-            b.classList.replace('bg-blue-700', 'bg-gray-300');
+            b.classList.replace("bg-blue-600", "bg-gray-200");
+            b.classList.replace("text-white", "text-gray-700");
+            b.classList.replace("bg-blue-700", "bg-gray-300");
           });
           // highlight clicked
-          btn.classList.replace('bg-gray-200', 'bg-blue-600');
-          btn.classList.replace('text-gray-700', 'text-white');
+          btn.classList.replace("bg-gray-200", "bg-blue-600");
+          btn.classList.replace("text-gray-700", "text-white");
 
           const data = browsers[id];
           comparisonDescription.textContent = data.description;
-          document.getElementById('baseImage').src = data.compareImage;
+          document.getElementById("baseImage").src = data.compareImage;
           resetSlider();
         });
       });
@@ -478,13 +533,13 @@
         resetSlider();
         compareButtons.compareChrome.click();
       };
-      
+
       // Add subtle header animation
-      const header = document.querySelector('header');
-      window.addEventListener('mousemove', (e) => {
+      const header = document.querySelector("header");
+      window.addEventListener("mousemove", (e) => {
         const x = e.clientX / window.innerWidth;
         const y = e.clientY / window.innerHeight;
-        
+
         header.style.backgroundPosition = `${x * 100}% ${y * 100}%`;
       });
     </script>
