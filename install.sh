@@ -42,4 +42,4 @@ fi
 
 rm -rf "$MOUNT_POINT" "$DMG_NAME"
 
-echo "✅ $APP_NAME has been installed to /Applications."
+echo "✅ $APP_NAME has been installed."
