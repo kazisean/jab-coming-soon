@@ -176,7 +176,7 @@
         <div class="flex flex-col items-center gap-6 mt-12">
           <div class="flex justify-center gap-6 flex-wrap">
             <a
-              href="https://github.com/kazisean/jab-coming-soon/releases/download/0.01/Jab-140.0.en-US.mac.dmg"
+              href="#install-mac"
               class="download-btn inline-flex items-center px-8 py-4 bg-white text-blue-600 rounded-xl hover:bg-gray-50 transition duration-300 shadow-lg"
             >
               <i class="fab fa-apple text-xl mr-3"></i>
@@ -311,7 +311,7 @@
           <div class="relative inline-block">
             <pre
               class="bg-gray-100 p-6 rounded-lg overflow-x-auto text-left"
-            ><code id="installCmd" class="text-sm">sh https://jab.ee/install.sh</code></pre>
+            ><code id="installCmd" class="text-sm">curl -s https://jab.ee/install.sh | sh    </code></pre>
             <button
               id="copyBtn"
               class="absolute top-4 right-4 p-2 bg-gray-200 rounded hover:bg-gray-300 transition shadow"
@@ -320,8 +320,8 @@
             </button>
           </div>
           <p class="text-gray-500 mt-4">
-            Click the copy icon to copy the command, then paste into your Terminal
-            and press <span class="font-bold">Enter</span> to start.
+            Click the copy icon to copy the command, then paste into your
+            Terminal and press <span class="font-bold">Enter</span> to start.
           </p>
         </div>
       </section>
@@ -422,6 +422,26 @@
     </footer>
 
     <script>
+      // command copy button
+      document.getElementById("copyBtn").addEventListener("click", () => {
+        const cmdEl = document.getElementById("installCmd");
+        const textToCopy = cmdEl.textContent.trim();
+        // Use modern Clipboard API
+        navigator.clipboard
+          .writeText(textToCopy)
+          .then(() => {
+            // Optional: give user feedback
+            const btn = document.getElementById("copyBtn");
+            btn.innerHTML = '<i class="fas fa-check"></i>';
+            setTimeout(() => {
+              btn.innerHTML = '<i class="fas fa-copy"></i>';
+            }, 1500);
+          })
+          .catch((err) => {
+            console.error("Could not copy text: ", err);
+          });
+      });
+
       // Browser comparison data
       const browsers = {
         compareChrome: {
